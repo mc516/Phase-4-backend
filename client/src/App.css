@@ -4,9 +4,16 @@
   padding: 0;
 }
 
+.links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+}
+
 .nav-links {
-  margin: 3px;
-  padding: 3px
+  padding-right: 1em ;
 }
 
 .home {

@@ -2,7 +2,7 @@ import React from "react";
 
 function Enroll() {
     return (
-        <div>
+        <div className="enroll">
             <h1>Enroll</h1>
         </div>
     )

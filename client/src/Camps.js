@@ -2,7 +2,10 @@ import React from "react";
 
 function Camps() {
     return (
-        <h1>Camps</h1>
+        <div className="camps">
+            <h1>Camps</h1>
+        </div>
+       
     )
 }
 
