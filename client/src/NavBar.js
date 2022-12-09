@@ -6,6 +6,7 @@ function NavBar() {
         <nav>
             <NavLink className="nav-links" to="/">Home</NavLink>
             <NavLink className="nav-links" to="/camps">Camps</NavLink>
+            <NavLink className="nav-links" to="/enroll">Enroll</NavLink>
         </nav>
     )
 }
