@@ -2,6 +2,7 @@ import React from "react";
 
 function CampCard({camp, image}) {
     console.log(camp)
+
     return (
         <div className="camps-item">   
             <img className="card-image" src={image} />     

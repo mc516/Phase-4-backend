@@ -48,3 +48,10 @@
   width: 75%;
     object-fit: cover
 }
+
+.join-now-btn {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  width: 25%;
+}
