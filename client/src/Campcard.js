@@ -10,6 +10,7 @@ function CampCard({camp, image}) {
       }
 
     return (
+       
         <div className="camps-item" onClick={routeChange}>   
             <img className="card-image" src={image} />     
             <p className="card-name">{camp.name}</p>

@@ -4,6 +4,22 @@ function Enroll() {
     return (
         <div className="enroll">
             <h1>Enroll</h1>
+            <form className="form-container">
+                <label htmlFor="name">Full Name: </label>
+                <input type="text" id="name" autoComplete="off"></input><br></br>
+
+                <label htmlFor="email">Email Address: </label>
+                <input type="text" id="email" autoComplete="off"></input><br></br>
+
+                <label htmlFor="password">Password: </label>
+                <input type="text" id="password" autoComplete="off"></input><br></br>
+
+                <label htmlFor="confirm-password">Confirm Password: </label>
+                <input type="text" id="confirm-password" autoComplete="off"></input><br></br>
+
+                <button className="register-btn"type="submit">Register</button>
+            </form>
+
         </div>
     )
 }
