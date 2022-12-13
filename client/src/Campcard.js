@@ -5,18 +5,18 @@ function CampCard({camp, image}) {
     let navigate = useNavigate();
 
     const routeChange = () =>{ 
-        let path = `/enroll`; 
+        let path = `/signup`; 
         navigate(path);
       }
 
     return (
        
-        <div className="camps-item" onClick={routeChange}>   
+        <div className="camps-item" >   
             <img className="card-image" src={image} />     
             <p className="card-name">{camp.name}</p>
             {/* <p className="card-description">{camp.description}</p> */}
             <p className="card-activity">Main Attraction: {camp.main_activity}</p>
-            <p>Click to learn more!</p>
+            <p onClick={routeChange} className="learn-more">Click to learn more!</p>
         </div>
     )
 }

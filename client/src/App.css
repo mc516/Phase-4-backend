@@ -41,7 +41,6 @@
   padding: 10px;
   font-size: 25px;
   text-align: center;
-  cursor: pointer;
 }
 
 .card-image {
@@ -73,5 +72,8 @@ label {
   text-align: center;
   display: inline-block;
   text-align: right; 
-  
+}
+
+.learn-more {
+  cursor: pointer;
 }

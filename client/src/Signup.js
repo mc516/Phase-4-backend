@@ -1,9 +1,9 @@
 import React from "react";
 
-function Enroll() {
+function Signup() {
     return (
         <div className="enroll">
-            <h1>Enroll</h1>
+            <h1>Sign Up</h1>
             <form className="form-container">
                 <label htmlFor="name">Full Name: </label>
                 <input type="text" id="name" autoComplete="off"></input><br></br>
@@ -12,7 +12,7 @@ function Enroll() {
                 <input type="text" id="email" autoComplete="off"></input><br></br>
 
                 <label htmlFor="password">Password: </label>
-                <input type="text" id="password" autoComplete="off"></input><br></br>
+                <input type="password" id="password" autoComplete="off"></input><br></br>
 
                 <label htmlFor="confirm-password">Confirm Password: </label>
                 <input type="text" id="confirm-password" autoComplete="off"></input><br></br>
@@ -24,4 +24,4 @@ function Enroll() {
     )
 }
 
-export default Enroll;
+export default Signup;
