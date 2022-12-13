@@ -21,6 +21,12 @@
   padding-top: 10px;
 }
 
+.login-signup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: solix black 1px;
+}
+
 .camps {
   text-align: center;
   padding-top: 10px;
@@ -49,18 +55,6 @@
     object-fit: cover
 }
 
-.enroll {
-  text-align: center;
-}
-
-.form-container {
-  border: solid black 1px;
-  text-align: left;
-  display: inline-block;
-  margin: auto;
-  width: 50%;
-}
-
 label {
     display: inline-block;  
     width: 250px;
@@ -69,9 +63,9 @@ label {
 }
 
 .register-btn {
-  text-align: center;
-  display: inline-block;
-  text-align: right; 
+  margin-left: 300px;
+  
+  
 }
 
 .learn-more {

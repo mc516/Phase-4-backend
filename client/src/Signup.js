@@ -2,9 +2,9 @@ import React from "react";
 
 function Signup() {
     return (
-        <div className="enroll">
+        <div className="signup">
             <h1>Sign Up</h1>
-            <form className="form-container">
+            <form className="sign-up-form-container">
                 <label htmlFor="name">Full Name: </label>
                 <input type="text" id="name" autoComplete="off"></input><br></br>
 
