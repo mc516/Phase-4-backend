@@ -15,12 +15,15 @@ function Login({onLogin}) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ email, password }),
-          }).then((r) => {
+          }).then((res) => {
             // setIsLoading(false);
-            if (r.ok) {
-              r.json().then((user) => onLogin(user));
+            if (res.ok) {
+              res.json().then((user) => {
+                // console.log(user)
+                onLogin(user)
+            });
             } else {
-              r.json().then((err) => setErrors(err.errors));
+              res.json().then((err) => setErrors(err.errors));
             }
           });
     }
@@ -49,8 +52,8 @@ function Login({onLogin}) {
             
                 <button className="login-btn"type="submit">Login</button>
             </form>
+
             
-            {errors.map((err) => console.log(err) )}
         </div>
     )
 }

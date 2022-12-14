@@ -3,6 +3,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import Camps from './Camps';
 import Signup from './Signup';
+import LogInOrSingup from './LogInOrSignup';
 import Account from './Account';
 import Login from './Login';
 import {Routes, Route} from "react-router-dom"
@@ -21,14 +22,25 @@ function App() {
         })
     }, [])
 
-    const currentUser  = null
+//autologin
+    useEffect(() => {
+      fetch("/me").then((res) => {
+        if (res.ok) {
+          res.json().then((user) => {
+            console.log(user)
+            setUser(user)
+          });
+        }
+      });
+    }, []);
 
-    // if (!user) return <Login />;
+    if (!user) return <LogInOrSingup />;
+    
   return (
     <div className="App">
-      <NavBar user={currentUser}/> 
+      <NavBar setUser={setUser}/> 
       <Routes>
-        <Route path="/" element={<Home user={currentUser} onLogin={setUser}/>} />     
+        <Route path="/" element={<Home user={user} onLogin={setUser}/>} />     
         <Route path="/camps" element={<Camps camps={camps}/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

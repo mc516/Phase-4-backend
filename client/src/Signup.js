@@ -21,12 +21,12 @@ function Signup({onLogin}) {
                 password,
                 confirm_password: passwordConfirmation,  
             }),
-          }).then((r) => {
+          }).then((res) => {
             // setIsLoading(false);
-            if (r.ok) {
-              r.json().then((user) => onLogin(user));
+            if (res.ok) {
+              res.json().then((user) => onLogin(user));
             } else {
-              r.json().then((err) => setErrors(err.errors));
+              res.json().then((err) => setErrors(err.errors));
             }
           });
     }
