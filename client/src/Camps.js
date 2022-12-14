@@ -1,7 +1,5 @@
 import React from "react";
-
 import CampCard from "./Campcard";
-
 
 function Camps({camps}) {
     const images = {

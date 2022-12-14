@@ -1,10 +1,11 @@
 import React from "react";
+import Account from "./Account";
 import LogInOrSignup from "./LogInOrSignup";
 
-function Home() {
+function Home({user, onLogin}) {
     return (
         <div className="home">
-            {<LogInOrSignup />}
+            { user ? <Account /> : <LogInOrSignup onLogin={onLogin}/> }
         </div>
         
     )

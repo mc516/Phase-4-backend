@@ -21,14 +21,14 @@ function App() {
         })
     }, [])
 
-    
+    const currentUser  = null
 
     // if (!user) return <Login />;
   return (
     <div className="App">
-      <NavBar />
+      <NavBar user={currentUser}/> 
       <Routes>
-        <Route path="/" element={<Home />} />     
+        <Route path="/" element={<Home user={currentUser} onLogin={setUser}/>} />     
         <Route path="/camps" element={<Camps camps={camps}/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

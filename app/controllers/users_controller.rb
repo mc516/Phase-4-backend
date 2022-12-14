@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: :create
-    
+    # skip_before_action :authorized, only: :create
+    def index
+        render json: User.all
+    end
+
     def create
         user = User.create(user_params)
         if user.valid?
@@ -18,5 +21,10 @@ class UsersController < ApplicationController
         else
             render json: { errors: "Unauthorized" }, status: :unauthorized
         end
+    end
+
+    private
+    def user_params
+        params.permit(:name, :email_address, :password, :confirm_password)
     end
 end
