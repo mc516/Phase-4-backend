@@ -3,11 +3,11 @@ import Login from "./Login";
 import Signup from "./Signup";
 
 
-function LogInOrSingup({onLogin}) {
+function LogInOrSingup({setUser}) {
     return (
         <div>
-            <Login onLogin={onLogin}/>
-            <Signup onLogin={onLogin}/>
+            <Login setUser={setUser}/>
+            <Signup setUser={setUser}/>
         </div>
     )
 }

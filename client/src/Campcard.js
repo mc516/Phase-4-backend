@@ -5,7 +5,7 @@ function CampCard({camp, image}) {
     let navigate = useNavigate();
 
     const routeChange = () =>{  
-        navigate('/login');
+        navigate('/home');
       }
 
     return (

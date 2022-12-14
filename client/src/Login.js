@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from 'react'
 
-function Login({onLogin}) {
+function Login({setUser}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -20,7 +20,7 @@ function Login({onLogin}) {
             if (res.ok) {
               res.json().then((user) => {
                 // console.log(user)
-                onLogin(user)
+                setUser(user)
             });
             } else {
               res.json().then((err) => setErrors(err.errors));
@@ -53,7 +53,7 @@ function Login({onLogin}) {
                 <button className="login-btn"type="submit">Login</button>
             </form>
 
-            
+            { errors ? <p>{errors}</p>: null}
         </div>
     )
 }
