@@ -52,7 +52,7 @@
 .card-image {
   height: 12rem;
   width: 75%;
-    object-fit: cover
+  object-fit: cover
 }
 
 label {

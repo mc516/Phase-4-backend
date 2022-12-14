@@ -1,12 +1,17 @@
 import React from "react";
 
 function LoginCard() {
+
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log('login click')
+    }
     return (
         <div className="login">
             <h1>Login</h1>
-            <form className="login-form-container">
-                <label htmlFor="email">Email: </label>
-                <input type="text" id="email" autoComplete="off"></input><br></br>
+            <form className="login-form-container" onSubmit={handleSubmit}>
+                <label htmlFor="login-email">Email: </label>
+                <input type="text" id="login-email" autoComplete="off"></input><br></br>
 
                 <label htmlFor="password">Password: </label>
                 <input type="password" id="password" autoComplete="off"></input><br></br>

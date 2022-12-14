@@ -4,15 +4,14 @@ import { useNavigate } from "react-router-dom";
 function CampCard({camp, image}) {
     let navigate = useNavigate();
 
-    const routeChange = () =>{ 
-        let path = `/signup`; 
-        navigate(path);
+    const routeChange = () =>{  
+        navigate('/login');
       }
 
     return (
        
         <div className="camps-item" >   
-            <img className="card-image" src={image} />     
+            <img className="card-image" src={image} alt={camp.name}/>     
             <p className="card-name">{camp.name}</p>
             {/* <p className="card-description">{camp.description}</p> */}
             <p className="card-activity">Main Attraction: {camp.main_activity}</p>
