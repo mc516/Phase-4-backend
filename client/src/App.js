@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [camps, setCamps] = useState([])
+  const [user, setUser] = useState(null)
 
     useEffect(() => {
         fetch("/camps")
@@ -20,6 +21,9 @@ function App() {
         })
     }, [])
 
+    
+
+    // if (!user) return <Login />;
   return (
     <div className="App">
       <NavBar />

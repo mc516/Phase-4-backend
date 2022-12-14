@@ -1,9 +1,10 @@
 import React from "react";
+import LogInOrSignup from "./LogInOrSignup";
 
 function Home() {
     return (
         <div className="home">
-            <h1>Hello World</h1>
+            {<LogInOrSignup />}
         </div>
         
     )

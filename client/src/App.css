@@ -21,10 +21,11 @@
   padding-top: 10px;
 }
 
-.login-signup {
+.login {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   border: solix black 1px;
+  padding-bottom: 30px;
 }
 
 .camps {
