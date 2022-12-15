@@ -25,7 +25,7 @@ function Signup({setUser}) {
           }).then((res) => {
             // setIsLoading(false);
             if (res.ok) {
-              res.json().then((user) => setUser(user));
+              res.json().then(setUser);
             } else {
               res.json().then((err) => setErrors(err.errors));
             }

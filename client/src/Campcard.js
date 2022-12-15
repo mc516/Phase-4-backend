@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function CampCard({camp, image}) {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const routeChange = () =>{  
         navigate('/home');

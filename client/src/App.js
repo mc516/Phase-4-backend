@@ -24,7 +24,7 @@ function App() {
 
 //autologin
     useEffect(() => {
-      fetch("/me").then((res) => {
+      fetch("/auth").then((res) => {
         if (res.ok) {
           res.json().then((user) => {
             console.log(user)

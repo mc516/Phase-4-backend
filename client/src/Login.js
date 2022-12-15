@@ -1,14 +1,19 @@
 import React from "react";
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Login({setUser}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     function handleSubmit(e){
         e.preventDefault()
         console.log('login click')
+        setIsLoading(true);
         fetch("/login", {
             method: "POST",
             headers: {
@@ -16,12 +21,10 @@ function Login({setUser}) {
             },
             body: JSON.stringify({ email, password }),
           }).then((res) => {
-            // setIsLoading(false);
+            setIsLoading(false);
             if (res.ok) {
-              res.json().then((user) => {
-                // console.log(user)
-                setUser(user)
-            });
+              res.json().then(setUser);
+              navigate('/home');
             } else {
               res.json().then((err) => setErrors(err.errors));
             }
