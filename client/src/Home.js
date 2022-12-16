@@ -5,7 +5,8 @@ import LogInOrSignup from "./LogInOrSignup";
 function Home({user, setUser}) {
     return (
         <div className="home">
-            { user ? <Account /> : <LogInOrSignup setUser={setUser}/> }
+            { <Account setUser={setUser}/> }
+            {user.name}
         </div>
         
     )

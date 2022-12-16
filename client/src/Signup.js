@@ -23,7 +23,6 @@ function Signup({setUser}) {
                 confirm_password: passwordConfirmation,  
             }),
           }).then((res) => {
-            // setIsLoading(false);
             if (res.ok) {
               res.json().then(setUser);
             } else {

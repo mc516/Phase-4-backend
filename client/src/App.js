@@ -20,28 +20,28 @@ function App() {
             console.log(data)
             setCamps(data)
         })
+
+        //auto login
+        fetch("/auth").then((res) => {
+          if (res.ok) {
+            res.json().then((user) => {
+              console.log(user)
+              setUser(user)
+            });
+          }
+        });
+
     }, [])
 
-//autologin
-    useEffect(() => {
-      fetch("/auth").then((res) => {
-        if (res.ok) {
-          res.json().then((user) => {
-            console.log(user)
-            setUser(user)
-          });
-        }
-      });
-    }, []);
 
-  if (!user) return <LogInOrSingup />;
-    
+  if (!user) return <LogInOrSingup setUser={setUser}/>;
+
   return (
     <div className="App">
       <NavBar setUser={setUser}/> 
       <Routes>
-        <Route path="/home" element={<Home user={user} setUser={setUser}/>} />     
-        <Route path="/camps" element={<Camps camps={camps}/>} />
+        <Route path="/" element={<Home user={user} />} />     
+        <Route path="/camps" element={<Camps camps={camps}/>} />  
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />

@@ -8,7 +8,7 @@ function Camps({camps}) {
         winter:"https://cdn.mos.cms.futurecdn.net/8Zw7hWD5ZaquyftsRbEmof-1200-80.jpg",
         spring:"https://guideposts.org/wp-content/uploads/2018/04/cherry_blossoms-1024x576.jpg.optimal.jpg",      
     }
-
+    
     return (
         <div className="camps">
             <h1>Camps</h1>

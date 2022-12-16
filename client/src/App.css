@@ -34,15 +34,14 @@
 }
 
 .camps-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: black;
-  padding: 5px;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  padding: 0px;
   height: 100%;
   grid-gap: 10px;
 }
 
-.camps-item {
+.camps-card {
   background-color: white;
   border: 1px solid black;
   padding: 10px;

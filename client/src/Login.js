@@ -6,14 +6,12 @@ function Login({setUser}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
     function handleSubmit(e){
-        e.preventDefault()
+        e.preventDefault();
         console.log('login click')
-        setIsLoading(true);
         fetch("/login", {
             method: "POST",
             headers: {
@@ -21,10 +19,9 @@ function Login({setUser}) {
             },
             body: JSON.stringify({ email, password }),
           }).then((res) => {
-            setIsLoading(false);
             if (res.ok) {
               res.json().then(setUser);
-              navigate('/home');
+              // navigate('/home');
             } else {
               res.json().then((err) => setErrors(err.errors));
             }
