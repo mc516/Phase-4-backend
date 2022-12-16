@@ -1,21 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Reviews from "./Reviews";
+function CampCard({camp, image, addComment}) {
 
-function CampCard({camp, image}) {
-    const navigate = useNavigate();
+    //destructure camp for comment here later to pasas into Reviews
 
-    const routeChange = () =>{  
-        navigate('/home');
-      }
-
-    return (
-       
+    return (  
         <div className="camps-card" >   
             <img className="card-image" src={image} alt={camp.name}/>     
             <p className="card-name">{camp.name}</p>
-            {/* <p className="card-description">{camp.description}</p> */}
             <p className="card-activity">Main Attraction: {camp.main_activity}</p>
-            
+            <p className="card-description">{camp.description}</p>
+            {<Reviews addComment={addComment}/>}
         </div>
     )
 }

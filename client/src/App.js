@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const [camps, setCamps] = useState([])
   const [user, setUser] = useState(null)
+  const [comments, setComments] = useState([])
 
     useEffect(() => {
         fetch("/camps")
@@ -20,6 +21,10 @@ function App() {
             console.log(data)
             setCamps(data)
         })
+
+        fetch("/comments")
+        .then(res => res.json())
+        .then(comments => setComments(comments))
 
         //auto login
         fetch("/auth").then((res) => {
@@ -33,6 +38,9 @@ function App() {
 
     }, [])
 
+    function addComment(newComment) {
+      setComments([...comments, newComment])
+    }
 
   if (!user) return <LogInOrSingup setUser={setUser}/>;
 
@@ -41,7 +49,7 @@ function App() {
       <NavBar setUser={setUser}/> 
       <Routes>
         <Route path="/" element={<Home user={user} />} />     
-        <Route path="/camps" element={<Camps camps={camps}/>} />  
+        <Route path="/camps" element={<Camps camps={camps} addComment={addComment}/>} />  
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />

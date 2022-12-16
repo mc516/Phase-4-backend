@@ -1,13 +1,10 @@
 import React from "react";
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
 
 function Login({setUser}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-
-    const navigate = useNavigate();
 
     function handleSubmit(e){
         e.preventDefault();
@@ -21,7 +18,6 @@ function Login({setUser}) {
           }).then((res) => {
             if (res.ok) {
               res.json().then(setUser);
-              // navigate('/home');
             } else {
               res.json().then((err) => setErrors(err.errors));
             }
@@ -34,7 +30,7 @@ function Login({setUser}) {
             <form className="login-form-container" onSubmit={handleSubmit}>
                 <label htmlFor="login-email">Email: </label>
                 <input 
-                    type="text" 
+                    type="email" 
                     id="login-email" 
                     autoComplete="off"
                     onChange={(e) => setEmail(e.target.value)}

@@ -6,4 +6,5 @@ Camp.create(name: "Winter", description: "Winter wonderland", main_activity:"Ski
 Camp.create(name: "Spring", description: "Spring season", main_activity: "White water rafting")
 
 
+
 puts "✅ Done seeding!"
