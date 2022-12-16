@@ -1,6 +1,6 @@
 import React from "react";
 import Reviews from "./Reviews";
-function CampCard({camp, image, addComment}) {
+function CampCard({camp, image, addComment, user}) {
 
     //destructure camp for comment here later to pasas into Reviews
 
@@ -10,7 +10,7 @@ function CampCard({camp, image, addComment}) {
             <p className="card-name">{camp.name}</p>
             <p className="card-activity">Main Attraction: {camp.main_activity}</p>
             <p className="card-description">{camp.description}</p>
-            {<Reviews addComment={addComment}/>}
+            {<Reviews addComment={addComment} user={user} camp={camp}/>}
         </div>
     )
 }

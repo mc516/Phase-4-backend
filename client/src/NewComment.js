@@ -1,13 +1,21 @@
 import React from "react";
 import {useState} from "react"
 
-function NewComment({setIsNewCommentClicked}) {
-    const [newComment, setNewComment] = useState({body:""})
+function NewComment({setIsNewCommentClicked, addComment, user, camp}) {
+    const [newComment, setNewComment] = useState({
+        body:"",
+        user_id: user.id,
+        camp_id: camp.id
+    })
 
+    console.log(user)
+    console.log(user.id)
+    console.log(camp)
+    console.log(camp.id)
     function handleChange(e) {
         setNewComment({
             ...newComment,
-            [e.target.name]: e.target.value
+            [e.target.id]: e.target.value
         })
     }
 
@@ -23,7 +31,7 @@ function NewComment({setIsNewCommentClicked}) {
         .then(res => res.json())
         .then(newComment => {
             console.log(newComment)
-            // addReview(newReview)  
+            addComment(newComment)  
         })
         setIsNewCommentClicked(false)
     }
@@ -33,6 +41,7 @@ function NewComment({setIsNewCommentClicked}) {
             <form onSubmit={handleSubmit}>
                 <textarea
                     type="text-box"
+                    id="body"
                     autoComplete="off"
                     rows="5" 
                     cols="40"

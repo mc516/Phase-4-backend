@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react"
 import NewComment from "./NewComment";
 
-function Reviews({addComment}) {
+function Reviews({addComment, user, camp}) {
     const [isNewCommentClicked, setIsNewCommentClicked] = useState(false)
     const [isEdit, setIsEdit] = useState(false) 
     const [isEditIndex, setIsEditIndex] = useState()
@@ -18,7 +18,7 @@ function Reviews({addComment}) {
             <p>Comment1</p>
             <p>Comment2</p>
             <p>Comment3</p>
-            {isNewCommentClicked ? <NewComment setIsNewCommentClicked={setIsNewCommentClicked} addComment={addComment}/> : null}
+            {isNewCommentClicked ? <NewComment setIsNewCommentClicked={setIsNewCommentClicked} addComment={addComment} user={user} camp={camp}/> : null}
             <button onClick={handleAddCommentClick}>Add comment</button>
 
         </div>
