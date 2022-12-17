@@ -2,16 +2,14 @@ import React from "react";
 import {useState} from "react"
 
 function NewComment({setIsNewCommentClicked, addComment, user, camp}) {
+    const userId = user.id
+    const campId = camp.id
     const [newComment, setNewComment] = useState({
         body:"",
-        user_id: user.id,
-        camp_id: camp.id
+        user_id: userId,
+        camp_id: campId
     })
 
-    console.log(user)
-    console.log(user.id)
-    console.log(camp)
-    console.log(camp.id)
     function handleChange(e) {
         setNewComment({
             ...newComment,
