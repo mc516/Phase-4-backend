@@ -73,7 +73,8 @@ function Signup({setUser}) {
 
                 <button className="register-btn"type="submit">Register</button>
             </form>
-            { errors ? <p>{errors}</p>: null}
+
+            { errors ? <p>{errors[0]}</p>: null}
         </div>
     )
 }
