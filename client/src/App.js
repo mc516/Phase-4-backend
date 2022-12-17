@@ -36,7 +36,7 @@ function App() {
           }
         });
 
-    }, [])
+    }, [setComments])
 
     function addComment(newComment) {
       setComments([...comments, newComment])
@@ -49,7 +49,7 @@ function App() {
       <NavBar setUser={setUser}/> 
       <Routes>
         <Route path="/" element={<Home user={user} />} />     
-        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment}/>} />  
+        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
@@ -59,3 +59,5 @@ function App() {
 }
 
 export default App;
+
+//addComment={addComment} 

@@ -2,13 +2,12 @@ import React from "react";
 import { useState } from "react"
 import NewComment from "./NewComment";
 
-function Reviews({addComment, user, camp}) {
+function Comments({addComment, user, camp, comments}) {
     const [isNewCommentClicked, setIsNewCommentClicked] = useState(false)
     const [isEdit, setIsEdit] = useState(false) 
     const [isEditIndex, setIsEditIndex] = useState()
 
-    const comments = camp.comments
-    console.log(comments)
+    const commentsToDisplay = comments.filter(comment => {return comment.camp_id === camp.id })
 
     function handleAddCommentClick(){
         setIsNewCommentClicked((isNewCommentClicked) => !isNewCommentClicked)
@@ -17,18 +16,17 @@ function Reviews({addComment, user, camp}) {
     return (
         <div className="comments">
             <h3>Comments</h3>
-            {comments.map((comment, index) => {
-                return <ul key={camp.id}>
+            {commentsToDisplay.map((comment, index) => {
+                return <ul key={comment.id}>
                     <li>
-                        <strong><p>{user.name} says:</p></strong>
-                        <p>{comment.body}</p>
+                        <>
+                            <strong><p>{user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]}:</p></strong>
+                            <p>{comment.body}</p>
+                        </>
                     </li>
                 </ul>
             })}
 
-            <p>Comment1</p>
-            <p>Comment2</p>
-            <p>Comment3</p>
             {isNewCommentClicked ? <NewComment setIsNewCommentClicked={setIsNewCommentClicked} addComment={addComment} user={user} camp={camp}/> : null}
             <button onClick={handleAddCommentClick}>Add comment</button>
 
@@ -36,4 +34,4 @@ function Reviews({addComment, user, camp}) {
     )
 }
 
-export default Reviews;
+export default Comments;
