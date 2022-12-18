@@ -48,14 +48,15 @@ function App() {
   }
 
   function updateComment(updatedComment) {
-    const newComment = comments.map(comment => {
-      if (comment.id ===updatedComment.id) {
-        return newComment;
+    const newComments = comments.map((comment) => {
+      if (comment.id === updatedComment.id) {
+        return updatedComment;
       }
       else {
         return comment
       }      
     })
+    setComments(newComments)
   }
 
   if (!user) return <LogInOrSingup setUser={setUser}/>;
