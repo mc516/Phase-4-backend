@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react"
 import NewComment from "./NewComment";
+import EditComment from "./EditComment";
 
-function Comments({addComment, user, camp, comments, removeComment}) {
+function Comments({addComment, user, camp, comments, removeComment, updateComment}) {
     const [isNewCommentClicked, setIsNewCommentClicked] = useState(false)
     const [isEdit, setIsEdit] = useState(false) 
     const [isEditIndex, setIsEditIndex] = useState()
@@ -11,6 +12,13 @@ function Comments({addComment, user, camp, comments, removeComment}) {
 
     function handleAddCommentClick(){
         setIsNewCommentClicked((isNewCommentClicked) => !isNewCommentClicked)
+    }
+    
+    function handleEditClick(comment, index){
+        console.log('edit click')
+        console.log(comment)
+        setIsEditIndex(index) 
+        setIsEdit((isEdit) => !isEdit)
     }
 
     function handleDeleteClick(comment){
@@ -30,11 +38,16 @@ function Comments({addComment, user, camp, comments, removeComment}) {
             {commentsToDisplay.map((comment, index) => {
                 return <ul key={comment.id}>
                     <li className="li-comments">
-                        <>
-                            <strong><p>{user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]}:</p></strong>
-                            <p>{comment.body}</p>
-                        </>
-                        <button onClick={() => handleDeleteClick(comment)}>Delete</button> 
+                        {index === isEditIndex && isEdit  ? 
+                                <EditComment comment={comment} setIsEdit={setIsEdit} updateComment={updateComment} user={user}/> 
+                            :
+                                <>
+                                    <strong><p>{user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]} :</p></strong>
+                                    <p>{comment.body}</p>
+                                </>
+                        }   
+                        <button onClick={() => handleEditClick(comment,index)}>Edit</button>
+                        <button onClick={() => handleDeleteClick(comment)}>Delete</button>     
                     </li>
                 </ul>
             })}

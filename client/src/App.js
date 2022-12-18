@@ -43,8 +43,19 @@ function App() {
   }
 
   function removeComment(id) {
-    const updatedComments = comments.filter(comment => comment.id !== id)
-    setComments(updatedComments)
+    const filteredComments = comments.filter(comment => comment.id !== id)
+    setComments(filteredComments)
+  }
+
+  function updateComment(updatedComment) {
+    const newComment = comments.map(comment => {
+      if (comment.id ===updatedComment.id) {
+        return newComment;
+      }
+      else {
+        return comment
+      }      
+    })
   }
 
   if (!user) return <LogInOrSingup setUser={setUser}/>;
@@ -54,7 +65,7 @@ function App() {
       <NavBar setUser={setUser}/> 
       <Routes>
         <Route path="/" element={<Home user={user} />} />     
-        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment}/>} />   
+        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />

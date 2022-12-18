@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
    require 'byebug'
-   
+
     def index
         render json: Comment.all, status: :created
     end
@@ -20,6 +20,14 @@ class CommentsController < ApplicationController
     end
 
     def update
+        comment = Comment.find_by(id: params[:id])
+        if comment  
+            comment.update(comment_params)
+            render json: comment, status: :accepted
+        else
+            render json: { error: "Comment not found"}, status: :not_found
+        end
+        # byebug
     end
 
     def destroy
