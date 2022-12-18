@@ -14,33 +14,38 @@ function App() {
   const [user, setUser] = useState(null)
   const [comments, setComments] = useState([])
 
-    useEffect(() => {
-        fetch("/camps")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setCamps(data)
-        })
+  useEffect(() => {
+    fetch("/camps")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        setCamps(data)
+    })
 
-        fetch("/comments")
-        .then(res => res.json())
-        .then(comments => setComments(comments))
+    fetch("/comments")
+    .then(res => res.json())
+    .then(comments => setComments(comments))
 
-        //auto login
-        fetch("/auth").then((res) => {
-          if (res.ok) {
-            res.json().then((user) => {
-              console.log(user)
-              setUser(user)
-            });
-          }
+    //auto login
+    fetch("/auth").then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          console.log(user)
+          setUser(user)
         });
+      }
+    });
 
-    }, [setComments])
+  }, [])
 
-    function addComment(newComment) {
-      setComments([...comments, newComment])
-    }
+  function addComment(newComment) {
+    setComments([...comments, newComment])
+  }
+
+  function removeComment(id) {
+    const updatedComments = comments.filter(comment => comment.id !== id)
+    setComments(updatedComments)
+  }
 
   if (!user) return <LogInOrSingup setUser={setUser}/>;
 
@@ -49,7 +54,7 @@ function App() {
       <NavBar setUser={setUser}/> 
       <Routes>
         <Route path="/" element={<Home user={user} />} />     
-        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments}/>} />   
+        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
@@ -60,4 +65,3 @@ function App() {
 
 export default App;
 
-//addComment={addComment} 
