@@ -42,7 +42,7 @@ function Comments({addComment, user, camp, comments, removeComment, updateCommen
                                 <EditComment comment={comment} setIsEdit={setIsEdit} updateComment={updateComment} user={user}/> 
                             :
                                 <>
-                                    <strong><p>{user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]} :</p></strong>
+                                    <strong><p>{comment.user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]} :</p></strong>
                                     <p>{comment.body}</p>
                                 </>
                         }   

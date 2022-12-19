@@ -15,7 +15,7 @@ function NavBar({user, setUser}) {
 
     return (
         <nav className="links">              
-                <Link className="nav-links" to="/">Home</Link>
+                <Link className="nav-links" to="/home">Home</Link>
                 <Link className="nav-links" to="/camps">Camps</Link>
                 {/* <Link className="nav-links" to="/login">Login</Link>  */}
                 {/* { user ? <button>Sign out</button> : <Link className="nav-links" to="/account">Account</Link> }          */}

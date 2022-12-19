@@ -31,7 +31,7 @@ function EditComment({comment, setIsEdit, updateComment, user}) {
     return(
         <div className="edit-comment">
             <form onSubmit={handleSubmit}> 
-                <strong><p>{user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]} :</p></strong>
+                <strong><p>{comment.user.name.split(' ')[0] + " " + user.name.split(' ')[1][0]} :</p></strong>
                 <textarea
                     type="text-box"
                     name="body"

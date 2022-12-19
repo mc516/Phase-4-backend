@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Login({setUser}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-
+    const navigate = useNavigate();
+    
     function handleSubmit(e){
         e.preventDefault();
         console.log('login click')
@@ -18,6 +20,7 @@ function Login({setUser}) {
           }).then((res) => {
             if (res.ok) {
               res.json().then(setUser);
+              navigate('/home')
             } else {
               res.json().then((err) => setErrors(err.errors));
             }

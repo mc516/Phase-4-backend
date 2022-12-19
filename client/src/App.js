@@ -65,7 +65,7 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser}/> 
       <Routes>
-        <Route path="/" element={<Home user={user} />} />     
+        <Route path="/home" element={<Home user={user} />} />     
         <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
