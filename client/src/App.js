@@ -18,7 +18,6 @@ function App() {
     fetch("/camps")
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         setCamps(data)
     })
 
@@ -63,12 +62,12 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar user={user}/> 
+      <NavBar user={user} setUser={setUser}/> 
       <Routes>
         <Route path="/home" element={<Home user={user} />} />     
         <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login user={user}/>} />
         <Route path="/account" element={<Account user={user}/>} />
       </Routes>
     </div>

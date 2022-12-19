@@ -53,7 +53,7 @@ function Comments({addComment, user, camp, comments, removeComment, updateCommen
             })}
 
             {isNewCommentClicked ? <NewComment setIsNewCommentClicked={setIsNewCommentClicked} addComment={addComment} user={user} camp={camp}/> : null}
-            <button onClick={handleAddCommentClick}>Add comment</button>
+            {isNewCommentClicked ? <button onClick={handleAddCommentClick}>Cancel</button> : <button onClick={handleAddCommentClick}>Add comment</button>}
 
         </div>
     )

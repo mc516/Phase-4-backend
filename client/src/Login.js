@@ -40,10 +40,10 @@ function Login({setUser}) {
                     >
                 </input><br></br>
 
-                <label htmlFor="password">Password: </label>
+                <label htmlFor="login-password">Password: </label>
                 <input 
                     type="password" 
-                    id="password" 
+                    id="login-password" 
                     autoComplete="off"
                     onChange={(e) => setPassword(e.target.value)}
                     >

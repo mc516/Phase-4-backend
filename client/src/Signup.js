@@ -56,10 +56,10 @@ function Signup({setUser}) {
                 />
                 <br></br>
 
-                <label htmlFor="password">Password: </label>
+                <label htmlFor="signup-password">Password: </label>
                 <input 
                     type="password" 
-                    id="password" 
+                    id="signup-password" 
                     autoComplete="off"
                     onChange={(e) => setPassword(e.target.value)}
                 />
