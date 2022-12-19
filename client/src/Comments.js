@@ -46,8 +46,8 @@ function Comments({addComment, user, camp, comments, removeComment, updateCommen
                                     <p>{comment.body}</p>
                                 </>
                         }   
-                        <button onClick={() => handleEditClick(comment,index)}>Edit</button>
-                        <button onClick={() => handleDeleteClick(comment)}>Delete</button>     
+                        {user.id === comment.user_id ? <button onClick={() => handleEditClick(comment,index)}>Edit</button> : null}
+                        {user.id === comment.user_id ? <button onClick={() => handleDeleteClick(comment)}>Delete</button> : null}  
                     </li>
                 </ul>
             })}
