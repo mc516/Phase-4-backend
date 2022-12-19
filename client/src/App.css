@@ -75,3 +75,21 @@ label {
 .li-comments {
   padding: 10px;
 }
+
+.account-container {
+  height: 10em;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 75%;
+  padding: 10px;
+}
+
+.account-info {
+  font-size: 30px;
+  margin: 0;
+  position: absolute;
+
+  margin-right: -50%;
+  border: solid black 1px
+}

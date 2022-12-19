@@ -17,10 +17,8 @@ function NavBar({user, setUser}) {
         <nav className="links">              
                 <Link className="nav-links" to="/home">Home</Link>
                 <Link className="nav-links" to="/camps">Camps</Link>
-                {/* <Link className="nav-links" to="/login">Login</Link>  */}
-                {/* { user ? <button>Sign out</button> : <Link className="nav-links" to="/account">Account</Link> }          */}
-                {/* { user ? <button>Sign out</button> : null }  */}
-                { user ? null : <button onClick={handleLogout}>Sign out</button> } 
+                { user ? <Link className="nav-links" to="/account">Account</Link> : null } 
+                { user ? <button onClick={handleLogout}>Sign out</button> : null} 
         </nav>
     )
 }

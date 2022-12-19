@@ -4,8 +4,8 @@ import NavBar from './NavBar';
 import Camps from './Camps';
 import Signup from './Signup';
 import LogInOrSingup from './LogInOrSignup';
-import Account from './Account';
 import Login from './Login';
+import Account from './Account';
 import {Routes, Route} from "react-router-dom"
 import { useEffect, useState } from 'react';
 
@@ -63,13 +63,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar setUser={setUser}/> 
+      <NavBar user={user}/> 
       <Routes>
         <Route path="/home" element={<Home user={user} />} />     
         <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/account" element={<Account user={user}/>} />
       </Routes>
     </div>
   );
