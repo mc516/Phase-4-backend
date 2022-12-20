@@ -25,11 +25,11 @@ class CommentsController < ApplicationController
         comment = Comment.find_by(id: params[:id])
         if comment  
             comment.update(comment_params)
-            render json: comment, include: :user, status: :accepted
+            render json: comment, include: [:user, :camp], status: :accepted
         else
             render json: { error: "Comment not found"}, status: :not_found
         end
-        # byebug
+       
     end
 
     def destroy
@@ -40,7 +40,6 @@ class CommentsController < ApplicationController
         else
             render json: { error: "Comment not found"}, status: :not_found
         end
-        # byebug
     end
 
     private

@@ -28,7 +28,6 @@ function App() {
       if (res.ok) {
         res.json().then((user) => {
           setUser(user);
-          console.log(user)
         });
       }
     });

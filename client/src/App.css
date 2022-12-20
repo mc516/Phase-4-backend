@@ -81,14 +81,14 @@ label {
   position: relative;
   justify-content: center;
   display: flex;
-  width: 75%;
+  width: 50%;
   padding: 10px;
+  margin: auto;
 }
 
 .account-info {
   font-size: 30px;
   margin: 0;
   position: absolute;
-  margin-right: -50%;
   border: solid black 1px
 }

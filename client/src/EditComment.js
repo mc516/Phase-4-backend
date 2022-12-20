@@ -13,7 +13,6 @@ function EditComment({comment, setIsEdit, updateComment, user}) {
     }
 
     function handleSubmit(e){
-        // e.preventdefault()
         fetch(`/comments/${comment.id}`, {
             method:'PATCH',
             headers: {

@@ -11,8 +11,8 @@ function Account({user, comments}) {
             <h2>Account info</h2>
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email_address}</p>
-                <br></br>
                 {<p>Account created on: {user.created_at.split("", 10)}</p>}
+                <br></br>
                 {userComments.length !== 0 ? <p>latest comment: '{latestComment[0].body}' for {latestComment[0].camp.name} Camp</p> : <p>No recent comments</p> }
 
             </div> 
