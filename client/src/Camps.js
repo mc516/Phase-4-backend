@@ -2,8 +2,6 @@ import React from "react";
 import CampCard from "./Campcard";
 
 function Camps({camps, addComment, user, comments, removeComment, updateComment}) {
-  
-    console.log(comments)
     const images = {
         summer:"https://images.wagwalkingweb.com/media/articles/dog/summer-season-allergies/summer-season-allergies.jpg",
         fall: "https://wps3.dbknews.com/uploads/2022/09/pexels-pixabay-33109.jpeg",

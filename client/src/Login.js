@@ -10,7 +10,6 @@ function Login({setUser}) {
     
     function handleSubmit(e){
         e.preventDefault();
-        console.log('login click')
         fetch("/login", {
             method: "POST",
             headers: {

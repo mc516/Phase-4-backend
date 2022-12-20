@@ -28,7 +28,6 @@ function NewComment({setIsNewCommentClicked, addComment, user, camp}) {
         }) 
         .then(res => res.json())
         .then(newComment => {
-            console.log(newComment)
             addComment(newComment)  
         })
         setIsNewCommentClicked(false)

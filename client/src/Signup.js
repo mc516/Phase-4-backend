@@ -12,7 +12,6 @@ function Signup({setUser}) {
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log('register click')
         fetch("/users", {
             method: "POST",
             headers: {

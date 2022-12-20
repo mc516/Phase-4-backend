@@ -15,8 +15,6 @@ function Comments({addComment, user, camp, comments, removeComment, updateCommen
     }
     
     function handleEditClick(comment, index){
-        console.log('edit click')
-        console.log(comment)
         setIsEditIndex(index) 
         setIsEdit((isEdit) => !isEdit)
     }
@@ -28,10 +26,8 @@ function Comments({addComment, user, camp, comments, removeComment, updateCommen
             })
             removeComment(comment.id)
         }
-        
-        console.log(camp)
-        console.log(comment)
     }
+    
     return (
         <div className="comments">
             <h3>Comments</h3>

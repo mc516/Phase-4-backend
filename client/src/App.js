@@ -17,9 +17,7 @@ function App() {
   useEffect(() => {
     fetch("/camps")
     .then(res => res.json())
-    .then(data => {
-        setCamps(data)
-    })
+    .then(data => setCamps(data))
 
     fetch("/comments")
     .then(res => res.json())
@@ -29,8 +27,8 @@ function App() {
     fetch("/auth").then((res) => {
       if (res.ok) {
         res.json().then((user) => {
+          setUser(user);
           console.log(user)
-          setUser(user)
         });
       }
     });
