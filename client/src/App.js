@@ -66,7 +66,7 @@ function App() {
         <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login user={user}/>} />
-        <Route path="/account" element={<Account user={user}/>} />
+        <Route path="/account" element={<Account user={user} comments={comments}/>} />
       </Routes>
     </div>
   );

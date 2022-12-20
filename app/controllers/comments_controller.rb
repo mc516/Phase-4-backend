@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
    skip_before_action :authorized, only: [:index, :show]
 
     def index
-        render json: Comment.all, include: :user, status: :created
+        render json: Comment.all, include: [:user, :camp], status: :created
     end
 
     def show
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
     def create
         newComment = Comment.create(comment_params)
-        render json: newComment, include: :user, status: :created
+        render json: newComment, include: [:user, :camp], status: :created
     end
 
     def update
