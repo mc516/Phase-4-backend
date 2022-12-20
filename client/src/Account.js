@@ -30,6 +30,7 @@ function Account({user}) {
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email_address}</p>
                 <br></br>
+                {<p>Account created on: {user.created_at.split("", 10)}</p>}
                 {/* {user.comments.length !== 0 ? <p>Most recent comment: '{recentComments[0].body}' for {recentCamp.name} Camp</p> : <p>No recent comments</p> } */}
 
             </div> 
