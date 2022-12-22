@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :email_address
       t.string :password_digest
       t.string :confirm_password
-
       t.timestamps
     end
   end

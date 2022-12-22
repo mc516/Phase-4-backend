@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './Home';
 import NavBar from './NavBar';
-import Camps from './Camps';
+import CampsList from './CampsList';
 import Signup from './Signup';
 import LogInOrSingup from './LogInOrSignup';
 import Login from './Login';
@@ -62,7 +62,7 @@ function App() {
       <NavBar user={user} setUser={setUser}/> 
       <Routes>
         <Route path="/home" element={<Home user={user} />} />     
-        <Route path="/camps" element={<Camps camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
+        <Route path="/camps" element={<CampsList camps={camps} user={user} addComment={addComment} comments={comments} removeComment={removeComment} updateComment={updateComment}/>} />   
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login user={user}/>} />
         <Route path="/account" element={<Account user={user} comments={comments}/>} />

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_12_10_145703) do
     t.string "name"
     t.string "description"
     t.string "main_activity"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

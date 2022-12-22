@@ -24,7 +24,6 @@ function Signup({setUser}) {
                 confirm_password: passwordConfirmation,  
             }),
           }).then((res) => {
-            console.log(res)
             if (res.ok) {
               res.json().then(setUser);
               navigate('/home')
