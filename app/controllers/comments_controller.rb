@@ -8,11 +8,11 @@ class CommentsController < ApplicationController
     end
 
     def show
-        comment = Comment.find_by(id: params[:id])
+        comment = find_comment
         if comment
             render json: comment
         else
-            render json: { error: "Comment not found"},status: :not_found
+            render_comment_not_found
         end
     end
 
@@ -22,12 +22,12 @@ class CommentsController < ApplicationController
     end
 
     def update
-        comment = Comment.find_by(id: params[:id])
+        comment = find_comment
         if comment  
             comment.update(comment_params)
             render json: comment, include: [:user, :camp], status: :accepted
         else
-            render json: { error: "Comment not found"}, status: :not_found
+            render_comment_not_found
         end
        
     end
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
             comment.destroy
             head :no_content, status: :ok
         else
-            render json: { error: "Comment not found"}, status: :not_found
+            render_comment_not_found
         end
     end
 
@@ -46,5 +46,13 @@ class CommentsController < ApplicationController
     
     def comment_params
         params.permit(:body, :user_id, :camp_id)
+    end
+
+    def find_comment
+        Comment.find_by(id: params[:id])
+    end
+
+    def render_comment_not_found
+        render json: { error: "Comment not found"}, status: :not_found
     end
 end
