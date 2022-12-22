@@ -19,11 +19,12 @@ function Signup({setUser}) {
             },
             body: JSON.stringify({
                 name,
-                email_address: email,
+                email_address: email.toLowerCase(),
                 password,
                 confirm_password: passwordConfirmation,  
             }),
           }).then((res) => {
+            console.log(res)
             if (res.ok) {
               res.json().then(setUser);
               navigate('/home')

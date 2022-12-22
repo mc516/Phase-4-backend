@@ -5,7 +5,6 @@ function EditComment({comment, setIsEdit, updateComment, user}) {
     const [newComment, setNewComment] = useState(comment)
 
     function handleChange(e){
-        console.log(e.target.value)
         setNewComment({
             ...newComment,
             [e.target.name]: e.target.value

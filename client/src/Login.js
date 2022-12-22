@@ -15,7 +15,7 @@ function Login({setUser}) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email: email.toLowerCase(), password }),
           }).then((res) => {
             if (res.ok) {
               res.json().then(setUser);
