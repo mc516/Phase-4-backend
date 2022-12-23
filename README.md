@@ -6,7 +6,7 @@ To download depencies for the frontend and backend, run:
 
 After installing dependencies, run: 
 
-### `rails db:migrate`
+### `rails db:migrate db:seed`
 
 This will migrate and create data necessary to run the application.
 
